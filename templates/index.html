@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Windows Death Count</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1><a href="/">Windows Death Count</a></h1>
+        <p>Linux Users Group Installfest 2015</p>
+      </div>
+      <form method="post">
+        {% if message %}
+          <div class="alert alert-info" role="alert"><b>{{ message }}</b></div>
+        {% endif %}
+
+        <h4>This page tracks the number of machines the Linux Users Group installed Linux on this year. A kill is dual-booting or only Linux, and a knockout setting up a virtual machine.</h4>
+
+        <div class="row" style="display: flex; align-items: center;">
+          <div class="col-md-8">
+            <h3>Another one bites the dust.</h3>
+            <h4>Current Kill count: {{ kills }}</h4>
+            <h4>Current Knockout count: {{ knockouts }}</h4>
+          </div>
+          <div class="col-md-2"><button class="center-block btn btn-lg btn-primary" formaction="/kill" type="submit">Kill!</button></div>
+          <div class="col-md-2"><button class="center-block btn btn-lg btn-primary" formaction="/knockout" type="submit">Knockout!</button></div>
+        </div>
+      </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>
