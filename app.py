@@ -7,7 +7,7 @@ def get_data():
     with open('data.json') as data_file:
         return json.load(data_file)
 
-def increment_data(knockouts=None, kills=None):
+def increment_data(knockouts=False, kills=False):
     data = get_data()
     with open('data.json', 'w') as out_file:
         if knockouts:
